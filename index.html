@@ -13,99 +13,241 @@
             <!-- Select Table to Order -->
             <div>
                 <h2 class="text-2xl font-semibold text-center mb-4">Select Table to Order</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Table 1 to 8 -->
-                    <div class="bg-red-500 text-white p-4 rounded-lg">
+                <div id="tables" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Table 1 to 7 -->
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(1)" id="table1">
                         <h3 class="text-lg font-bold text-center mb-4">Table No. 1</h3>
-                        <ul class="mt-2 space-y-1">
-                            <table border="1" style="border-collapse: collapse; width: 50%; text-align: left;">
-                                <tr>
-                                  <th style="background-color: #ff0000; padding: 8px;">Particular</th>
-                                  <th style="background-color: #ff0000; padding: 8px;">QTY</th>
-                                  <th style="background-color: #ff0000; padding: 8px;">Price</th>
-                                </tr>
-                                <tr>
-                                  <td style="padding: 8px;">TEA</td>
-                                  <td style="padding: 8px;">1</td>
-                                  <td style="padding: 8px;">30</td>
-                                </tr>
-                                <tr>
-                                  <td style="padding: 8px;">SURYA</td>
-                                  <td style="padding: 8px;">1</td>
-                                  <td style="padding: 8px;">25</td>
-                                </tr>
-                                <tr>
-                                  <td style="padding: 8px;">MOMO</td>
-                                  <td style="padding: 8px;">1</td>
-                                  <td style="padding: 8px;">130</td>
-                                </tr>
-                                <tr>
-                                  <td colspan="2" style="padding: 8px;">TOTAL</td>
-                                  <td style="padding: 8px;">RS. 185</td>
-                                </tr>
-                              </table>
-                              
-                        </ul>
-                        <div class="flex justify-between mt-4">
-                            <button class="bg-yellow-500 text-black px-3 py-1 rounded">Edit Order</button>
-                            <button class="bg-green-500 text-black px-3 py-1 rounded">Save & Clear Table</button>
+                        <div id="table1Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(1)">Save & Clear Table</button>
                         </div>
                     </div>
-                    <!-- Repeat for Table No. 2 to 8 with same structure -->
-                    <!-- Use a loop or copy-paste and adjust Table numbers -->
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(2)" id="table2">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 2</h3>
+                        <div id="table2Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(2)">Save & Clear Table</button>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(3)" id="table3">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 3</h3>
+                        <div id="table3Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(3)">Save & Clear Table</button>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(4)" id="table4">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 4</h3>
+                        <div id="table4Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(4)">Save & Clear Table</button>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(5)" id="table5">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 5</h3>
+                        <div id="table5Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(5)">Save & Clear Table</button>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(6)" id="table6">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 6</h3>
+                        <div id="table6Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(6)">Save & Clear Table</button>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg cursor-pointer" onclick="selectTable(7)" id="table7">
+                        <h3 class="text-lg font-bold text-center mb-4">Table No. 7</h3>
+                        <div id="table7Orders" class="text-center"></div>
+                        <div class="text-center mt-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="saveAndClearTable(7)">Save & Clear Table</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Click to Place Order -->
             <div>
                 <h2 class="text-2xl font-semibold text-center mb-4">Click to Place Order</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <div id="orderButtons" class="grid grid-cols-2 gap-4" style="display: none;">
                     <!-- Order Buttons -->
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">TEA</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">SURYA</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">SHIKHAR</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">B. MOMO</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">CHOWMIN</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">C. MOMO</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">LEMONADE</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">COKE</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">FRY RICE</button>
-                    <button class="bg-blue-500 text-white p-4 rounded-lg">OTHER ITEMS</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('TEA', 30)">TEA</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('SURYA', 25)">SURYA</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('SHIKHAR', 25)">SHIKHAR</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('B. MOMO', 130)">B. MOMO</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('CHOWMIN', 100)">CHOWMIN</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('C. MOMO', 140)">C. MOMO</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('LEMONADE', 50)">LEMONADE</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('COKE', 40)">COKE</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('FRY RICE', 120)">FRY RICE</button>
+                    <button class="bg-blue-500 text-white p-4 rounded-lg" onclick="addItem('OTHER ITEMS', 200)">OTHER ITEMS</button>
                 </div>
                 <h3 class="text-xl font-bold text-center mt-8">CLICKED ITEMS</h3>
-                <table border="1" style="border-collapse: collapse; width: 50%; text-align: left;">
+                <table border="1" style="border-collapse: collapse; width: 50%; text-align: left;" id="clickedItemsTable">
                     <tr>
-                      <th style="background-color: #f2f2f2; padding: 8px;">Particular</th>
-                      <th style="background-color: #f2f2f2; padding: 8px;">QTY</th>
-                      <th style="background-color: #f2f2f2; padding: 8px;">Price</th>
+                        <th style="background-color: #f2f2f2; padding: 8px;">Particular</th>
+                        <th style="background-color: #f2f2f2; padding: 8px;">QTY</th>
+                        <th style="background-color: #f2f2f2; padding: 8px;">Price</th>
+                        <th style="background-color: #f2f2f2; padding: 8px;">Action</th>
                     </tr>
-                    <tr>
-                      <td style="padding: 8px;">TEA</td>
-                      <td style="padding: 8px;">1</td>
-                      <td style="padding: 8px;">30</td>
-                    </tr>
-                    <tr>
-                      <td style="padding: 8px;">SURYA</td>
-                      <td style="padding: 8px;">1</td>
-                      <td style="padding: 8px;">25</td>
-                    </tr>
-                    <tr>
-                      <td style="padding: 8px;">MOMO</td>
-                      <td style="padding: 8px;">1</td>
-                      <td style="padding: 8px;">130</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" style="padding: 8px;">TOTAL</td>
-                      <td style="padding: 8px;">RS. 185</td>
-                    </tr>
-                  </table>
-                  
-                </ul>
+                </table>
                 <div class="flex justify-between mt-4">
-                    <button class="bg-blue-500 text-white px-3 py-1 rounded">Edit Order</button>
-                    <button class="bg-blue-500 text-white px-3 py-1 rounded">Confirm Order</button>
+                    <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="confirmOrder()">Confirm Order</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let selectedTable = null;
+        let orderItems = {};
+        let tableOrders = {};
+
+        function selectTable(tableNumber) {
+            if (tableOrders[tableNumber]) {
+                alert('Table No. ' + tableNumber + ' is already occupied. Please select another table.');
+                return;
+            }
+
+            selectedTable = tableNumber;
+            document.getElementById('orderButtons').style.display = 'grid';
+            alert('Table No. ' + tableNumber + ' selected');
+        }
+
+        function addItem(item, price) {
+            if (!selectedTable) {
+                alert('Please select a table first.');
+                return;
+            }
+
+            if (orderItems[item]) {
+                orderItems[item].qty++;
+            } else {
+                orderItems[item] = { qty: 1, price: price };
+            }
+
+            renderOrderItems();
+        }
+
+        function deleteItem(item) {
+            delete orderItems[item];
+            renderOrderItems();
+        }
+
+        function renderOrderItems() {
+            const table = document.getElementById('clickedItemsTable');
+            table.innerHTML = `
+                <tr>
+                    <th style="background-color: #f2f2f2; padding: 8px;">Particular</th>
+                    <th style="background-color: #f2f2f2; padding: 8px;">QTY</th>
+                    <th style="background-color: #f2f2f2; padding: 8px;">Price</th>
+                    <th style="background-color: #f2f2f2; padding: 8px;">Action</th>
+                </tr>
+            `;
+
+            let total = 0;
+            for (let item in orderItems) {
+                const qty = orderItems[item].qty;
+                const price = orderItems[item].price;
+                const row = table.insertRow();
+                row.insertCell().textContent = item;
+                row.insertCell().textContent = qty;
+                row.insertCell().textContent = price * qty;
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.className = 'bg-red-500 text-white px-3 py-1 rounded';
+                deleteButton.onclick = () => deleteItem(item);
+                row.insertCell().appendChild(deleteButton);
+                total += price * qty;
+            }
+
+            const totalRow = table.insertRow();
+            totalRow.innerHTML = `
+                <td colspan="2" style="padding: 8px;">TOTAL</td>
+                <td style="padding: 8px;">RS. ${total}</td>
+                <td></td>
+            `;
+        }
+
+        function confirmOrder() {
+            if (!selectedTable) {
+                alert('Please select a table first.');
+                return;
+            }
+
+            tableOrders[selectedTable] = { ...orderItems };
+            renderTableOrders();
+            orderItems = {};
+            renderOrderItems();
+            alert('Order confirmed for Table No. ' + selectedTable);
+            document.getElementById('orderButtons').style.display = 'none';
+        }
+
+        function renderTableOrders() {
+            for (let table in tableOrders) {
+                const tableDiv = document.getElementById('table' + table + 'Orders');
+                const orders = tableOrders[table];
+                let ordersHtml = '<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">';
+                ordersHtml += `
+                    <tr>
+                        <th style="padding: 8px;">Particular</th>
+                        <th style="padding: 8px;">QTY</th>
+                        <th style="padding: 8px;">Price</th>
+                    </tr>
+                `;
+
+                let total = 0;
+                for (let item in orders) {
+                    const qty = orders[item].qty;
+                    const price = orders[item].price;
+                    ordersHtml += `
+                        <tr>
+                            <td style="padding: 8px;">${item}</td>
+                            <td style="padding: 8px;">${qty}</td>
+                            <td style="padding: 8px;">${price * qty}</td>
+                        </tr>
+                    `;
+                    total += price * qty;
+                }
+
+                ordersHtml += `
+                    <tr>
+                        <td colspan="2" style="padding: 8px;">TOTAL</td>
+                        <td style="padding: 8px;">RS. ${total}</td>
+                    </tr>
+                `;
+                ordersHtml += '</table>';
+                tableDiv.innerHTML = ordersHtml;
+            }
+        }
+
+        function saveAndClearTable(tableNumber) {
+            const tableOrder = tableOrders[tableNumber];
+            if (!tableOrder) {
+                alert('No orders to save for Table No. ' + tableNumber);
+                return;
+            }
+
+            fetch('save_order.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ table: tableNumber, orders: tableOrder })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Order saved and table cleared successfully for Table No. ' + tableNumber);
+                    delete tableOrders[tableNumber];
+                    renderTableOrders();
+                } else {
+                    alert('Failed to save order.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to save order.');
+            });
+        }
+    </script>
 </body>
 </html>
